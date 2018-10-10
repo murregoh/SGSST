@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,9 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavbarrightComponent implements OnInit {
 
-  @Input() test: string;
-
-  constructor() {
+  constructor( private _activeRoute: ActivatedRoute ) {
+    this._activeRoute.params.subscribe( data => console.log(data) );
   }
 
   ngOnInit() {
