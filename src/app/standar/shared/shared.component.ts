@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './shared.component.html',
   styleUrls: ['./shared.component.css']
 })
-export class SharedComponent implements OnInit {
+export class SharedStandarComponent implements OnInit {
 
   constructor() { }
 
