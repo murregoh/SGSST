@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-navbarright',
-  templateUrl: './navbarright.component.html',
-  styleUrls: ['./navbarright.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class NavbarrightComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
   constructor( private _activeRoute: ActivatedRoute ) {
     this._activeRoute.params.subscribe( data => console.log(data) );
