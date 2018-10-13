@@ -1,9 +1,14 @@
-<!-- <app-header></app-header> -->
+<div class="row">
+    <app-header></app-header>
+</div>
 
-<!-- <app-navbar></app-navbar> -->
-<router-outlet></router-outlet>
-
-<!-- <div class="">
-
-</div> -->
-<!-- <router-outlet></router-outlet> -->
+<div class="row">
+    <div class="col-md-3">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="col-md-9">
+        <div class="jumbotron">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
