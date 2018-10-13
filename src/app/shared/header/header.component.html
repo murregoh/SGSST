@@ -1,5 +1,24 @@
-<header>
-    <div>
-        esto es una prueba
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ICONO</a>
+
+    <div *ngIf="auth.isAuthenticated()">
+        <span>Test text</span>
     </div>
-</header>
+
+    <div *ngIf="!auth.isAuthenticated()">
+        <span class="navbar-text">
+            <button type="button" class="btn btn-outline-primary" (click)="auth.login()">
+                Log In
+            </button>
+          </span>
+    </div>
+
+    <div *ngIf="auth.isAuthenticated()">
+        <span class="navbar-text">
+            <button type="button" class="btn btn-outline-primary" (click)="auth.logout()">
+                Log Out
+            </button>
+          </span>
+    </div>
+
+</nav>

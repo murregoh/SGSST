@@ -9,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  @Input() isAuth: boolean;
+
   constructor( private _activeRoute: ActivatedRoute ) {
     this._activeRoute.params.subscribe( data => console.log(data) );
   }

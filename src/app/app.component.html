@@ -3,12 +3,15 @@
 </div>
 
 <div class="row">
+
     <div class="col-md-3">
-        <app-navbar></app-navbar>
+        <app-navbar [isAuth]="auth.isAuthenticated()"></app-navbar>
     </div>
+
     <div class="col-md-9">
         <div class="jumbotron">
             <router-outlet></router-outlet>
         </div>
     </div>
+
 </div>

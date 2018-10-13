@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SharedComponent } from './premium/shared/shared.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { ServicesComponent } from './services/services.component';
 import { ServiceComponent } from './premium/service/service.component';
 import { NormativaComponent } from './shared/normativa/normativa.component';
 import { QueesComponent } from './shared/quees/quees.component';
@@ -21,13 +20,15 @@ import { HeaderComponent } from './shared/header/header.component';
 // Routes
 import { APP_ROUTING } from './app.routes';
 
+// Services
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     SharedComponent,
     NavbarComponent,
-    ServicesComponent,
     ServiceComponent,
     NormativaComponent,
     QueesComponent,
@@ -43,7 +44,10 @@ import { APP_ROUTING } from './app.routes';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

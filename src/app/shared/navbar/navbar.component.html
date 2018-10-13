@@ -8,13 +8,13 @@
     <li class="nav-item">
         <a class="nav-link" [routerLink]="['/formacion']">Formación</a>
     </li>
-    <li class="nav-item">
+    <li *ngIf="isAuth" class="nav-item">
         <a class="nav-link" [routerLink]="['/formatos']">Formatos</a>
     </li>
-    <li class="nav-item">
+    <li *ngIf="isAuth" class="nav-item">
         <a class="nav-link" [routerLink]="['/indicadores']">Indicadores</a>
     </li>
-    <li class="nav-item">
+    <li *ngIf="isAuth" class="nav-item">
         <a class="nav-link" [routerLink]="['/informes']">Informes</a>
     </li>
 </ul>

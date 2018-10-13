@@ -1,0 +1,13 @@
+<div *ngIf="_auth.isAuthenticated()">
+    <div class="col-4">
+        <img [src]="profile.picture" alt="picture" class="img-thumbnail img-circle">
+        <span> {{ profile.name }} </span>
+    </div>
+    <br>
+    <hr>
+    <h4>Estos son los datos que retorna en JSON</h4>
+    <hr>
+    <pre>
+        {{ profile | json }}
+    </pre>
+</div>
