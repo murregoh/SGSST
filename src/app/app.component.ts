@@ -8,6 +8,7 @@ import { AuthService } from '../app/services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
 
   constructor( public auth: AuthService) {
     this.auth.handleAuthentication();

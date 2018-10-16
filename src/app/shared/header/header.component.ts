@@ -7,9 +7,21 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
-  constructor( public auth: AuthService) {
+  profile: any;
+
+  constructor( public auth: AuthService) {    
   }
-
+  ngOnInit() {
+    if (this.auth.userProfile) {
+      this.profile = this.auth.userProfile;
+      console.log( this.profile );
+    } else {
+      this.auth.getProfile((err, profile) => {
+        this.profile = profile;
+        console.log( this.profile );
+      });
+    }
+  }
 }
