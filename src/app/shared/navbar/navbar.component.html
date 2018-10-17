@@ -1,20 +1,36 @@
-<ul class="nav flex-column">
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/normativa']">Normativa</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/quees']">¿Que es?</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/formacion']">Formación</a>
-    </li>
-    <li *ngIf="isAuth" class="nav-item">
-        <a class="nav-link" [routerLink]="['/formatos']">Formatos</a>
-    </li>
-    <li *ngIf="isAuth" class="nav-item">
-        <a class="nav-link" [routerLink]="['/indicadores']">Indicadores</a>
-    </li>
-    <li *ngIf="isAuth" class="nav-item">
-        <a class="nav-link" [routerLink]="['/informes']">Informes</a>
-    </li>
-</ul>
+<nav>
+    <ul >
+        <li >
+            <div class="sombra"></div>
+            <a class="nav-link" [routerLink]="['/normativa']"><p class="estilo">Normativa</p> </a>
+        </li>
+        <li>
+            <div class="sombra"></div>
+            <a class="nav-link" [routerLink]="['/quees']"><p class="estilo">¿Que es?</p></a>
+        </li>
+        <li >
+            <div class="sombra"></div>
+            <a class="nav-link" [routerLink]="['/formacion']"><p class="estilo">Formación</p></a>
+        </li>
+        
+        <li *ngIf="isAuth" >
+            <div class="sombra"></div>
+            <a class="nav-link" [routerLink]="['/formatos']"><p class="estilo">Formatos</p></a>
+        </li>
+        <li *ngIf="isAuth" >
+            <div class="sombra"></div>
+            <a class="nav-link" [routerLink]="['/indicadores']"><p class="estilo">Indicadores</p></a>
+        </li>
+        <li *ngIf="isAuth" >
+            <div class="sombra"></div>
+            <a class="nav-link" [routerLink]="['/informes']"><p class="estilo">Informes</p></a>
+        </li>
+    </ul>
+
+
+
+</nav>
+
+
+
+
