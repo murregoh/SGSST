@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck,
+          AfterContentInit, AfterContentChecked,
+          AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -6,23 +8,40 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnChanges, DoCheck, AfterContentInit,
+                                      AfterContentChecked, AfterViewInit, AfterViewChecked,
+                                      OnDestroy {
 
-  profile: any;
+  isAuth: boolean;
 
-  constructor( public _auth: AuthService) {
+  constructor( private auth: AuthService) {
+    this.isAuth = this.auth.isAuthenticated();
+    console.log('Home - Constructor');
   }
 
+  ngOnChanges() {
+    console.log('Home - ngOnChanges');
+  }
   ngOnInit() {
-    if (this._auth.userProfile) {
-      this.profile = this._auth.userProfile;
-      console.log( this.profile );
-    } else {
-      this._auth.getProfile((err, profile) => {
-        this.profile = profile;
-        console.log( this.profile );
-      });
-    }
+    console.log('Home - ngOnInit');
+  }
+  ngDoCheck() {
+    console.log('Home - ngDoCheck');
+  }
+  ngAfterContentInit() {
+    console.log('Home - ngAfterContentInit');
+  }
+  ngAfterContentChecked() {
+    console.log('Home - ngAfterContentChecked');
+  }
+  ngAfterViewInit() {
+    console.log('Home - ngAfterViewInit');
+  }
+  ngAfterViewChecked() {
+    console.log('Home - ngAfterViewChecked');
+  }
+  ngOnDestroy() {
+    console.log('Home - ngOnDestroy');
   }
 
 }

@@ -1,15 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-        <img src="http://www.ampagaldos.com/ampa/images/NoticiasGr/normativa.jpg" alt="icono-normativa" width="40"
-            height="40">
+        <img src="http://www.ampagaldos.com/ampa/images/NoticiasGr/normativa.jpg" alt="icono-normativa" width="40" height="40">
     </a>
 
 
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Reportes
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -19,24 +17,26 @@
                 </div>
             </li>
         </ul>
+
         <form class="form-inline my-2 my-lg-0">
 
-            <button *ngIf="!auth.isAuthenticated()" class="btn btn-outline-primary my-2 my-sm-0" type="button" (click)="auth.login()">Log
+            <button *ngIf="!isAuth" class="btn btn-outline-primary my-2 my-sm-0" type="button" (click)="login()">Log
                 In</button>
 
-            <div *ngIf="auth.isAuthenticated()" class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    {{profile.name}}
+            <div *ngIf="isAuth" class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ profile.name }}
                     <img [src]="profile.picture" alt="picture" class="img-circle" width="35" height="35">
                 </button>
+
                 <div class="dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item" type="button" href="#">Mi perfil</button>
+                    <button class="dropdown-item" type="button">Mi perfil</button>
                     <button class="dropdown-item" type="button">Agregar una cuenta</button>
                     <button class="dropdown-item" type="button">Ayuda</button>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#" (click)="auth.logout()">Cerrar sesión</a>
+                    <a class="dropdown-item" (click)="logout()">Cerrar sesión</a>
                 </div>
+
             </div>
         </form>
     </div>
