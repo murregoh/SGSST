@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit, OnChanges, DoCheck, AfterContent
         this.profile = profile;
       });
     }
+
   }
 
   logout() {

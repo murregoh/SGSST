@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges, DoCheck,
           AfterContentInit, AfterContentChecked,
           AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
